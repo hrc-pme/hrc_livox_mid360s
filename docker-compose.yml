@@ -1,0 +1,22 @@
+services:
+  livox:
+    build: .
+    image: hrc_livox_mid360s:humble
+    container_name: hrc_livox
+    # Required: the lidar talks UDP directly to the host's wired NIC
+    network_mode: host
+    ipc: host
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      # Use a different ID per person/robot on the same network (0-101)
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-0}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # Edit launch/config on the host; no rebuild needed (symlink-install)
+      - ./hrc_livox:/hrc_ws/src/hrc_livox
+    devices:
+      # GPU for RViz. Remove this if the computer has no /dev/dri
+      - /dev/dri:/dev/dri
+    stdin_open: true
+    tty: true

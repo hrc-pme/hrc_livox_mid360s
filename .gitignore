@@ -1,0 +1,27 @@
+# colcon
+build/
+install/
+log/
+
+# data
+*.bag
+*.db3
+*.mcap
+*.lvx
+*.lvx2
+*.pcd
+
+# python / editors
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+*.swp
+.env
+.env.*
+.venv/
+.cache/
+compile_commands.json
+*.log
+*~
+.DS_Store

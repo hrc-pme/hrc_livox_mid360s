@@ -1,0 +1,9 @@
+# HRC lab Livox Mid-360S units
+# host_ip: IP of the computer's wired NIC connected to the lidar
+# lidars:  name -> lidar IP (192.168.1.1XX, XX = last two digits of the serial number)
+
+host_ip: 192.168.1.5
+
+lidars:
+  "1": 192.168.1.199   # unit 1, tested 2026-11-20
+  "2": 192.168.1.119   # unit 2, tested 2026-11-23

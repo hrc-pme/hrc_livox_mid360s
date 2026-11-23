@@ -1,0 +1,8 @@
+.git
+.vscode
+.idea
+build/
+install/
+log/
+**/__pycache__
+**/*.pyc
